@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="duration"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Bus</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="bus_number">Bus Number:</label>
+            <input type="text" id="bus_number" name="bus_number" required>
+        </div>
+        <div class="form-group">
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required>
+        </div>
+        <div class="form-group">
+            <label for="seats">Number of Seats:</label>
+            <input type="number" id="seats" name="seats" min="1" required>
+        </div>
+        <div class="form-group">
+            <label for="trip">Trip:</label>
+            <input type="text" id="trip" name="trip" required>
+        </div>
+        <div class="form-group">
+            <label for="trip_duration">Trip Duration:</label>
+            <input type="time" id="trip_duration" name="trip_duration" required>
+        </div>
+        <div class="form-group">
+            <label for="conductor">Conductor:</label>
+            <input type="text" id="conductor" name="conductor" required>
+        </div>
+        <div class="form-group">
+            <label for="driver">Driver:</label>
+            <input type="text" id="driver" name="driver" required>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
